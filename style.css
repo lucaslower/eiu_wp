@@ -25,6 +25,10 @@ body{
   box-sizing:border-box;
 }
 
+div#spacer{
+  height:32px;
+}
+
 /* SIDEBAR/HEADER */
 section#sidebar{
   position:fixed;
@@ -60,7 +64,7 @@ section#sidebar div.masthead h2{
   color:#ccc;
   text-align:center;
   font-size:1.2em;
-  margin:10px 15px 0px 15px;
+  margin:5px 15px 0px 15px;
 }
 
 /* nav */
@@ -71,11 +75,11 @@ section#sidebar nav#primary ul{
 }
 
 section#sidebar nav#primary ul li{
-
+  position:relative;
 }
 
 section#sidebar nav#primary ul li a{
-  padding:12px 0px 12px 80px;
+  padding:12px 0px 12px 70px;
   cursor:pointer;
   transition:background 0.2s;
   color:#ccc;
@@ -85,7 +89,7 @@ section#sidebar nav#primary ul li a{
 }
 
 section#sidebar nav#primary ul li a:hover{
-  background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.1);
   transition:background 0.2s;
   color:#fff;
 }
@@ -98,7 +102,16 @@ section#sidebar nav#primary ul li.current-menu-item a{
 section#sidebar nav#primary ul li i{
   position:absolute;
   top:50%;
-  left:40px;
+  left:30px;
+  transform:translateY(-50%);
+  font-size:1.2em;
+}
+
+section#sidebar nav#primary ul li i.fa-angle-right{
+  position:absolute;
+  top:50%;
+  left:auto;
+  right:30px;
   transform:translateY(-50%);
   font-size:1.2em;
 }
@@ -332,14 +345,14 @@ section.content.pubs ul li p{
   line-height:1.5;
 }
 
-section.content.pubs ul li ul.tags{
+section.content.pubs ul.tags{
   list-style:none;
   margin-bottom:8px;
 }
 
-section.content.pubs ul li ul.tags li{
+section.content.pubs ul.tags li{
   display:inline-block;
-  padding:6px 10px;
+  padding:0;
   border-radius:4px;
   background:#5ed7fa;
   color:#000;
@@ -350,6 +363,13 @@ section.content.pubs ul li ul.tags li{
   border-bottom:none;
 }
 
+section.content.pubs ul.tags li a{
+  color:#000;
+  text-decoration:none;
+  padding:6px 10px;
+  display:inline-block;
+}
+
 section.content.pubs h1.title{
   margin:20px 0px 40px 0px;
   text-align:center;
@@ -357,4 +377,70 @@ section.content.pubs h1.title{
   border-bottom:1px solid rgba(0,0,0,0.2);
   padding-bottom:10px;
   font-size:1.5em;
+}
+
+section.content.pubs div.taglist{
+  padding:10px 20px;
+  background:#ececec;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  border-top:1px solid rgba(0,0,0,0.2);
+  margin-bottom:40px;
+}
+
+section.content.pubs div.taglist h1{
+  display:inline-block;
+  margin:0px 30px 0px 0px;
+}
+
+section.content.pubs div.taglist ul.tags{
+  display:inline-block;
+}
+
+section.content.pubs div.taglist ul.tags li{
+  position:relative;
+  top:-2px;
+}
+
+section.content.pubs ul.tags li i.fa{
+  margin-right:6px;
+}
+
+section.content.pubs div.taglist ul.tags li.divider{
+  background:#353535;
+  border-radius:none;
+  padding:0;
+  margin:0px 15px -20px 5px;
+  width:2px;
+  height:25px;
+  position:relative;
+  top:-13px;
+}
+
+/* icon changes on hover */
+section.content.pubs ul.tags li.current i.fa-check{
+  display:initial;
+}
+
+section.content.pubs ul.tags li.current i.fa-times{
+  display:none;
+}
+
+section.content.pubs ul.tags li.current:hover i.fa-check{
+  display:none;
+}
+
+section.content.pubs ul.tags li.current:hover i.fa-times{
+  display:initial;
+}
+
+section.content.pubs ul.tags li i.fa-check{
+  display:none;
+}
+
+section.content.pubs ul.tags li.all i.fa-check{
+  display:initial;
+}
+
+section.content.pubs ul.tags li:hover i.fa-check{
+  display:initial;
 }

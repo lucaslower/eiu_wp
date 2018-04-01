@@ -1,6 +1,6 @@
 <?php
-// THE ARCHIVE-PUBLICATIONS.PHP FILE
-// LISTS ALL PUBLICATIONS
+// THE TAXONOMY-PUBTAGS.PHP FILE
+// LISTS ALL PUBLICATIONS WITH SPECIFIC TAG
 // (C) CATS 2018
 
 // grab the header file
@@ -17,7 +17,7 @@ get_header();
   <h1>Sort by tags:</h1>
   <ul class="tags">
     <?php $new_link = get_site_url() . '/?post_type=publications'; ?>
-    <li class="all"><a href="<?php echo $new_link; ?>"><i class="fa fa-check"></i>All</a></li><li class="divider"></li>
+    <li><a href="<?php echo $new_link; ?>">All</a></li><li class="divider"></li>
   <?php
   $tags = get_terms( array(
       'taxonomy' => 'pubtags',
@@ -86,7 +86,6 @@ $terms = get_the_terms( get_the_ID(), 'pubtags' );
 </ul>
 
 </section>
-
 
 <?php
 // grab the footer file

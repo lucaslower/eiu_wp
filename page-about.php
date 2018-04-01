@@ -188,22 +188,21 @@ function expand(postid){
 
   if( $pub_query->have_posts() ) : while ( $pub_query->have_posts() ) : $pub_query->the_post();
   $terms = get_the_terms( get_the_ID(), 'pubtags' );
-
+?>
+<li>
+  <?php the_post_thumbnail('thumbnail'); ?>
+  <h1><?php the_title(); ?></h1>
+<?php
   if ( $terms && ! is_wp_error( $terms ) ) :
 
-      $tags = array();
 
-      foreach ( $terms as $term ) {
-          $tags[] = $term->name;
-      }
-    endif;
   ?>
-      <li>
-        <?php the_post_thumbnail('thumbnail'); ?>
-        <h1><?php the_title(); ?></h1>
-        <?php foreach($tags as $tag){ ?>
-        <ul class="tags"><li><?php echo $tag; ?></li></ul>
-      <?php } ?>
+        <ul class="tags">
+        <?php foreach($terms as $term){ ?>
+        <li><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
+        <?php } ?>
+        </ul>
+      <?php endif; ?>
         <p><?php the_field('publication_authors'); ?></p>
         <p><?php the_field('citation'); ?></p>
         <p>Publication Year: <?php the_field('publication_year'); ?></p>
@@ -220,22 +219,21 @@ function expand(postid){
 
     if( $pub_query->have_posts() ) : while ( $pub_query->have_posts() ) : $pub_query->the_post();
     $terms = get_the_terms( get_the_ID(), 'pubtags' );
-
+  ?>
+  <li>
+    <?php the_post_thumbnail('thumbnail'); ?>
+    <h1><?php the_title(); ?></h1>
+  <?php
     if ( $terms && ! is_wp_error( $terms ) ) :
 
-        $tags = array();
 
-        foreach ( $terms as $term ) {
-            $tags[] = $term->name;
-        }
-      endif;
     ?>
-        <li>
-          <?php the_post_thumbnail('thumbnail'); ?>
-          <h1><?php the_title(); ?></h1>
-          <?php foreach($tags as $tag){ ?>
-          <ul class="tags"><li><?php echo $tag; ?></li></ul>
-        <?php } ?>
+          <ul class="tags">
+          <?php foreach($terms as $term){ ?>
+          <li><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
+          <?php } ?>
+          </ul>
+        <?php endif; ?>
           <p><?php the_field('publication_authors'); ?></p>
           <p><?php the_field('citation'); ?></p>
           <p>Publication Year: <?php the_field('publication_year'); ?></p>
