@@ -14,7 +14,7 @@ get_header();
 <section class="content pubs">
 
   <div class="taglist">
-  <h1>Sort by tags:</h1>
+  <h1>Filter by tags:</h1>
   <ul class="tags">
     <?php $new_link = get_site_url() . '/?post_type=publications'; ?>
     <li><a href="<?php echo $new_link; ?>">All</a></li><li class="divider"></li>
