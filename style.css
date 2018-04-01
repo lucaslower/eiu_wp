@@ -1,0 +1,360 @@
+/*
+Theme Name: EIU Faculty
+Theme URI: https://eiu.edu
+Author: Lucas Lower (CATS)
+Description: Theme for EIU faculty member websites
+Version: 1.0
+*/
+
+/* GENERAL LAYOUT STUFF */
+html{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+body{
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family:'Lato', sans-serif;
+  font-size:16px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+/* SIDEBAR/HEADER */
+section#sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  width:260px;
+  background:rgba(0,0,0,0.8);
+  color:#fff;
+}
+
+section#sidebar div.masthead{
+  width:100%;
+  margin:40px 0px 0px 0px;
+}
+
+section#sidebar div.masthead img{
+  width:55%;
+  border-radius:50%;
+  margin:0 auto;
+  display:block;
+}
+
+section#sidebar div.masthead h1{
+  font-weight:300;
+  text-align:center;
+  font-size:1.8em;
+  margin:20px 15px 0px 15px;
+}
+
+section#sidebar div.masthead h2{
+  font-weight:300;
+  color:#ccc;
+  text-align:center;
+  font-size:1.2em;
+  margin:10px 15px 0px 15px;
+}
+
+/* nav */
+section#sidebar nav#primary ul{
+  list-style:none;
+  padding:0;
+  margin:20px 0px 0px 0px;
+}
+
+section#sidebar nav#primary ul li{
+
+}
+
+section#sidebar nav#primary ul li a{
+  padding:12px 0px 12px 80px;
+  cursor:pointer;
+  transition:background 0.2s;
+  color:#ccc;
+  display:block;
+  text-decoration:none;
+  position:relative;
+}
+
+section#sidebar nav#primary ul li a:hover{
+  background:rgba(255,255,255,0.2);
+  transition:background 0.2s;
+  color:#fff;
+}
+
+section#sidebar nav#primary ul li.current-menu-item a{
+  background:rgba(255,255,255,0.2);
+  color:#fff;
+}
+
+section#sidebar nav#primary ul li i{
+  position:absolute;
+  top:50%;
+  left:40px;
+  transform:translateY(-50%);
+  font-size:1.2em;
+}
+
+/* CONTENT */
+section#page{
+  position:absolute;
+  left:260px;
+  right:0;
+  top:0;
+}
+
+section#page header#content_header{
+  background:#ececec;
+  padding:80px 10%;
+}
+
+section#page header#content_header h1{
+  margin:0;
+  font-size:2.2em;
+  font-weight:400;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+}
+
+section.content{
+  padding:40px 10%;
+}
+
+section.content img.alignleft{
+  float:left;
+  margin:20px 40px 20px 0px;
+}
+
+section.content img.alignright{
+  float:right;
+  margin:20px 40px 20px 0px;
+}
+
+section.content.main p{
+  font-size:1.5em;
+  line-height:150%;
+  font-weight:300;
+  margin-top:0;
+}
+
+section.content.listcontainer{
+  background:#ececec;
+}
+
+section.content.listcontainer:after{
+  content:'';
+  display:table;
+  clear:both;
+}
+
+/* ACADEMIC POSITIONS LIST (also used for other lists)*/
+section.positions{
+margin:40px 0px 0px 0px;
+}
+
+section.positions h1.title{
+  margin:0px 0px 20px 0px;
+  text-align:center;
+  font-weight:400;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  padding-bottom:10px;
+  font-size:1.5em;
+}
+
+section.positions table{
+  vertical-align:middle;
+}
+
+section.positions table td{
+  padding-bottom:20px;
+}
+
+section.positions div.years{
+  background:#42a9c7;
+  width:100px;
+  color:#fff;
+  text-align:center;
+  line-height:2;
+  float:left;
+  margin:0 12px 0 0;
+}
+
+section.positions div.years span{
+  display:block;
+  background:#5ed7fa;
+}
+
+section.positions h1{
+  font-size:1.2em;
+  margin:0;
+}
+
+section.positions p{
+  font-size:0.9em;
+  font-weight:300;
+  margin:0;
+}
+
+/* position both lists */
+section.positions{
+  width:46%;
+  float:left;
+}
+section.positions.ed{
+  width:46%;
+  float:right;
+}
+@media(max-width:1100px){
+  section.positions{
+    width:100%;
+    float:none;
+  }
+  section.positions.ed{
+    width:100%;
+    float:none;
+  }
+}
+
+section.awards{
+
+}
+
+section.awards h1.title{
+  margin:20px 0px 40px 0px;
+  text-align:center;
+  font-weight:400;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  padding-bottom:10px;
+  font-size:1.5em;
+}
+
+section.awards ul.cont{
+  list-style:none;
+  padding:0;
+}
+
+section.awards ul.cont > li{
+position:relative;
+padding-left:80px;
+}
+
+section.awards ul.cont li div.info{
+  padding:20px;
+  margin-bottom:20px;
+  background:#ececec;
+  position:relative;
+  z-index:10;
+}
+
+section.awards ul.cont li div.year{
+  background:#5ed7fa;
+  color:#fff;
+  padding:10px;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+}
+
+section.awards ul.cont li h1{
+  font-size:1.2em;
+  margin:0px 0px 0px 0px;
+  cursor:pointer;
+}
+
+section.awards ul.cont li div.text{
+  overflow:hidden;
+}
+
+section.awards ul.cont li p{
+  margin:10px 0px;
+}
+
+section.awards ul.cont li i{
+float:right;
+transition:0.2s;
+}
+
+.flip{
+  transform: rotate(180deg);
+  transition:0.2s;
+}
+
+/* publications list */
+section.content.pubs{
+
+}
+
+section.content.pubs ul{
+  padding:0;
+  list-style:none;
+}
+
+section.content.pubs ul li{
+  position:relative;
+  padding:0px 0px 20px 140px;
+  margin-bottom:40px;
+  border-bottom:1px solid #cecece;
+}
+
+section.content.pubs ul li:after{
+  content:'';
+  display:table;
+  clear:both;
+}
+
+section.content.pubs ul li img{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100px;
+  height:auto;
+}
+
+section.content.pubs ul li h1{
+  font-weight:400;
+  font-size:1.2em;
+  margin:0px 0px 8px 0px;
+}
+
+section.content.pubs ul li p{
+  margin:0;
+  font-size:0.8em;
+  line-height:1.5;
+}
+
+section.content.pubs ul li ul.tags{
+  list-style:none;
+  margin-bottom:8px;
+}
+
+section.content.pubs ul li ul.tags li{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:4px;
+  background:#5ed7fa;
+  color:#000;
+  margin:0px 10px 0px 0px;
+  font-size:0.6em;
+  font-weight:700;
+  cursor:pointer;
+  border-bottom:none;
+}
+
+section.content.pubs h1.title{
+  margin:20px 0px 40px 0px;
+  text-align:center;
+  font-weight:400;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  padding-bottom:10px;
+  font-size:1.5em;
+}
