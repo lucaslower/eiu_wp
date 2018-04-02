@@ -357,10 +357,33 @@ section.content.pubs ul.tags li{
   background:#5ed7fa;
   color:#000;
   margin:0px 10px 0px 0px;
-  font-size:0.6em;
+  font-size:0.7em;
   font-weight:700;
   cursor:pointer;
   border-bottom:none;
+}
+
+section.content.pubs ul.tags li.link{
+  background:#7f7f7f;
+}
+
+section.content.pubs ul.tags li.link a{
+  color:#fff;
+}
+
+section.content.pubs ul.tags li.link a i{
+  margin-left:8px;
+}
+
+section.content.pubs ul.tags li.divider{
+  background:#353535;
+  border-radius:none;
+  padding:0;
+  margin:0px 10px -20px 1px;
+  width:2px;
+  height:21px;
+  position:relative;
+  top:-13px;
 }
 
 section.content.pubs ul.tags li a{
@@ -368,6 +391,10 @@ section.content.pubs ul.tags li a{
   text-decoration:none;
   padding:6px 10px;
   display:inline-block;
+}
+
+section.content.pubs div.taglist ul.tags li a{
+  padding:4px 8px;
 }
 
 section.content.pubs h1.title{
@@ -399,6 +426,20 @@ section.content.pubs div.taglist ul.tags{
 section.content.pubs div.taglist ul.tags li{
   position:relative;
   top:-2px;
+  border:2px solid transparent;
+}
+
+section.content.pubs div.taglist ul.tags li:hover{
+  border:2px solid #7f7f7f;
+}
+
+section.content.pubs div.taglist ul.tags li.current:hover{
+  border:2px solid #7f7f7f;
+}
+
+section.content.pubs div.taglist ul.tags li.current,
+section.content.pubs div.taglist ul.tags li.all.current:hover{
+  border:2px solid #000;
 }
 
 section.content.pubs ul.tags li i.fa{
@@ -409,38 +450,9 @@ section.content.pubs div.taglist ul.tags li.divider{
   background:#353535;
   border-radius:none;
   padding:0;
-  margin:0px 15px -20px 5px;
+  margin:0px 15px -20px 6px;
   width:2px;
   height:25px;
   position:relative;
   top:-13px;
-}
-
-/* icon changes on hover */
-section.content.pubs ul.tags li.current i.fa-check{
-  display:initial;
-}
-
-section.content.pubs ul.tags li.current i.fa-times{
-  display:none;
-}
-
-section.content.pubs ul.tags li.current:hover i.fa-check{
-  display:none;
-}
-
-section.content.pubs ul.tags li.current:hover i.fa-times{
-  display:initial;
-}
-
-section.content.pubs ul.tags li i.fa-check{
-  display:none;
-}
-
-section.content.pubs ul.tags li.all i.fa-check{
-  display:initial;
-}
-
-section.content.pubs ul.tags li:hover i.fa-check{
-  display:initial;
 }

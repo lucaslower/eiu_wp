@@ -198,6 +198,14 @@ function expand(postid){
 
   ?>
         <ul class="tags">
+          <?php if(get_field('external_link') || get_field('downloadable_file')){ ?>
+          <?php if(get_field('external_link')){ ?>
+            <li title="Click to view this publication's abstract" class="link"><a href="<?php the_field('external_link');?>">Abstract<i class="fa fa-external-link"></i></a></li>
+          <?php } if(get_field('downloadable_file')){ ?>
+            <li title="Click to download this publication" class="link"><a href="<?php the_field('downloadable_file');?>">Download<i class="fa fa-download"></i></a></li>
+          <?php } ?>
+          <li></li>
+          <?php } ?>
         <?php foreach($terms as $term){ ?>
         <li><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
         <?php } ?>
@@ -229,6 +237,14 @@ function expand(postid){
 
     ?>
           <ul class="tags">
+            <?php if(get_field('external_link') || get_field('downloadable_file')){ ?>
+            <?php if(get_field('external_link')){ ?>
+              <li title="Click to view this publication's abstract" class="link"><a href="<?php the_field('external_link');?>">Abstract<i class="fa fa-external-link"></i></a></li>
+            <?php } if(get_field('downloadable_file')){ ?>
+              <li title="Click to download this publication" class="link"><a href="<?php the_field('downloadable_file');?>">Download<i class="fa fa-download"></i></a></li>
+            <?php } ?>
+            <li></li>
+            <?php } ?>
           <?php foreach($terms as $term){ ?>
           <li><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
           <?php } ?>

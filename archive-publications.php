@@ -17,7 +17,7 @@ get_header();
   <h1>Filter by tags:</h1>
   <ul class="tags">
     <?php $new_link = get_site_url() . '/?post_type=publications'; ?>
-    <li class="all"><a href="<?php echo $new_link; ?>"><i class="fa fa-check"></i>All</a></li><li class="divider"></li>
+    <li class="all current"><a href="<?php echo $new_link; ?>">All</a></li><li class="divider"></li>
   <?php
   $tags = get_terms( array(
       'taxonomy' => 'pubtags',
@@ -41,13 +41,13 @@ get_header();
       $new_link = get_site_url() . '/?pubtags=' . $new_get;
   }
   ?>
-  <li class="current"><a href="<?php echo $new_link;?>"><i class="fa fa-check"></i><i class="fa fa-times"></i><?php echo $tag->name; ?></a></li>
+  <li title="Click to remove this tag from filter" class="current"><a href="<?php echo $new_link;?>"><?php echo $tag->name; ?></a></li>
   <?php } else{
     $current[] = $tag->slug;
     $new_get = implode('+',$current);
     $new_link = get_site_url() . '/?pubtags=' . $new_get;
   ?>
-  <li><a href="<?php echo $new_link;?>"><i class="fa fa-check"></i><?php echo $tag->name; ?></a></li>
+  <li title="Click to filter by this tag"><a href="<?php echo $new_link;?>"><?php echo $tag->name; ?></a></li>
   <?php } }?>
   </ul>
   </div>
@@ -70,8 +70,16 @@ $terms = get_the_terms( get_the_ID(), 'pubtags' );
 
       ?>
             <ul class="tags">
+              <?php if(get_field('external_link') || get_field('downloadable_file')){ ?>
+              <?php if(get_field('external_link')){ ?>
+                <li title="Click to view this publication's abstract" class="link"><a href="<?php the_field('external_link');?>">Abstract<i class="fa fa-external-link"></i></a></li>
+              <?php } if(get_field('downloadable_file')){ ?>
+                <li title="Click to download this publication" class="link"><a href="<?php the_field('downloadable_file');?>">Download<i class="fa fa-download"></i></a></li>
+              <?php } ?>
+              <li></li>
+              <?php } ?>
             <?php foreach($terms as $term){ ?>
-            <li><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
+            <li title="Click to filter by this tag"><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
             <?php } ?>
             </ul>
           <?php endif; ?>
